@@ -23,7 +23,7 @@ on:
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: 20200915
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: lean/Netgear-wndr3800/.config
   DIY_P1_SH: lean/Netgear-wndr3800/diy-part1.sh
