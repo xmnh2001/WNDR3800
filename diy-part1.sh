@@ -12,5 +12,5 @@
 
 # Modify default IP
 sed -i 's/%C/By HongFeng/g' package/base-files/files/etc/openwrt_release
-sed -i 's/192.168.1.1/10.0.0.4/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
 sed -i 's/openWrt/HongFeng-lede/g' package/base-files/files/bin/config_generate
