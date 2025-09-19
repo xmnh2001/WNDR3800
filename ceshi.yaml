@@ -11,11 +11,11 @@ proxy-providers:
       enable: true
       url: https://www.gstatic.com/generate_204
       interval: 300
-    proxy: 直连
+    proxy: 🎯 直连
 
 # 节点信息
 proxies:
-  - {name: 直连, type: direct}
+  - {name: 🎯 直连, type: direct}
 
 # 全局配置 
 port: 7890
@@ -40,11 +40,11 @@ profile:
 
 # 为防止使用插件朋友遇到面板问题，我注释掉了此模块。
 # 跑裸核朋友自行删除注释即可，使用nikki仅内核的ui路径改为/etc/nikki/run/ui
-external-controller: 0.0.0.0:9090
-secret: ""
-external-ui: "/etc/mihomo/ui"
-external-ui-name: zashboard
-external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+#external-controller: 0.0.0.0:9090
+#secret: ""
+#external-ui: "/etc/mihomo/ui"
+#external-ui-name: zashboard
+#external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
 # 嗅探
 sniffer:
@@ -101,15 +101,16 @@ dns:
 # 如果相应分组没有筛选到对应的国家，请根据自己节点名字调整筛选关键字。
 # 没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。
 proxy-groups:
-  - {name: 🚀 手动选择, type: select, proxies: [♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 📹 YouTube, type: select, proxies: [♻️ 美国自动, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 自动选择, 🚀 手动选择,🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🤖 ChatGPT, type: select, proxies: [♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🚀 手动选择,🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🤖 Gemini, type: select, proxies: [♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🚀 手动选择,🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🎵 TikTok, type: select, proxies: [♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🚀 手动选择,🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 📲 Telegram, type: select, proxies: [♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🚀 手动选择,🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🎥 NETFLIX, type: select, proxies: [♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🚀 手动选择,🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 💶 PayPal, type: select, proxies: [♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🚀 手动选择,🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 直连]}
+  - {name: 🚀 手动选择, type: select, proxies: [♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
+  - {name: 📹 YouTube, type: select, proxies: [🚀 手动选择, ♻️ 美国自动, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
+  - {name: 🤖 ChatGPT, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
+  - {name: 🤖 Gemini, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
+  - {name: 🎵 TikTok, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
+  - {name: 📲 Telegram, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
+  - {name: 🎥 NETFLIX, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
+  - {name: 💶 PayPal, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
+  - {name: 🔀 非标端口, type: select, proxies: [🐟 遵循规则, 🎯 直连]}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
   - {name: 🇭🇰 香港节点, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
   - {name: 🇯🇵 日本节点, type: select, include-all: true, filter: "(?i)日|jp|japan"}
   - {name: 🇸🇬 狮城节点, type: select, include-all: true, filter: "(?i)新加坡|坡|狮城|SG|Singapore"}
@@ -118,14 +119,20 @@ proxy-groups:
   - {name: ♻️ 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
   - {name: ♻️ 狮城自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$" }
   - {name: ♻️ 美国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"}
-  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$"}
+  - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(🎯 直连)).)*$"}
   - {name: 🌐 全部节点, type: select, include-all: true}
+  - {name: 🐟 遵循规则, type: select, proxies: [🐟 漏网之鱼]}
 
 # 规则匹配
 # 此规则部分没有做防泄露处理，因为弊严重大于利！
 rules:
-  - RULE-SET,private_ip,直连,no-resolve
-  - RULE-SET,private_domain,直连
+  - DOMAIN-SUFFIX,m-team.cc,DIRECT
+  - DOMAIN-SUFFIX,pttime.org,DIRECT
+  - DOMAIN-SUFFIX,hdtime.org,DIRECT
+  - SRC-PORT,48853,DIRECT
+  - DOMAIN-KEYWORD,synology,♻️ 美国自动
+  - RULE-SET,private_ip,🎯 直连,no-resolve
+  - RULE-SET,private_domain,🎯 直连
   - RULE-SET,proxylite,🚀 手动选择
   - RULE-SET,Gemini,🤖 Gemini
   - RULE-SET,ai,🤖 ChatGPT
@@ -134,18 +141,19 @@ rules:
   - GEOSITE,google,📹 YouTube
   - GEOSITE,onedrive,📹 YouTube
   - GEOSITE,microsoft,📹 YouTube
-  - RULE-SET,apple_domain,直连
+  - RULE-SET,apple_domain,🎯 直连
   - RULE-SET,tiktok_domain,🎵 TikTok
   - GEOIP,telegram,📲 Telegram,no-resolve
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,paypal_domain,💶 PayPal
-  - RULE-SET,apple_ip,直连,no-resolve
+  - RULE-SET,apple_ip,🎯 直连,no-resolve
   - RULE-SET,google_ip,📹 YouTube,no-resolve
   - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
   - RULE-SET,geolocation-!cn,🚀 手动选择
-  - RULE-SET,cn_domain,直连
-  - GEOIP,cn,直连,no-resolve
+  - RULE-SET,cn_domain,🎯 直连
+  - GEOIP,cn,🎯 直连,no-resolve
+  - RULE-SET,dst_pot,🔀 非标端口
   - MATCH,🐟 漏网之鱼
 
 # 规则集
@@ -159,6 +167,7 @@ rule-providers:
   proxylite: { <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/proxy.list"}
   ai: {  <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs" }
   Gemini: { <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/google-gemini.mrs" }
+  dst_pot: {type: http, interval: 86400, behavior: classical, format: yaml, url: "https://testingcf.jsdelivr.net/gh/Aethersailor/Custom_OpenClash_Rules@main/rule/Custom_Port_Direct.yaml" }
   youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   github_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
