@@ -12,7 +12,8 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🎯 直连
-
+    exclude-filter: '.*(0\.1x|建议).*'
+    
 # 节点信息
 proxies:
   - {name: 🎯 直连, type: direct}
@@ -103,7 +104,7 @@ dns:
 proxy-groups:
   - {name: 🚀 手动选择, type: select, proxies: [♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
   - {name: 🌍 全球, type: select, proxies: [🚀 手动选择, ♻️ 美国自动, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
-  - {name: 🤖 ChatGPT, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
+  - {name: 🤖 AI, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
   - {name: 🤖 Gemini, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
   - {name: 🎵 TikTok, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
   - {name: 📲 Telegram, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
@@ -134,7 +135,8 @@ rules:
   - RULE-SET,private_domain,🎯 直连
   - RULE-SET,proxylite,🚀 手动选择
   - RULE-SET,Gemini,🤖 Gemini
-  - RULE-SET,ai,🤖 ChatGPT
+  - GEOSITE,bing,🤖 AI
+  - RULE-SET,ai,🤖 AI
   - GEOSITE,github,🌍 全球
   - GEOSITE,youtube,🌍 全球
   - GEOSITE,google,🌍 全球
