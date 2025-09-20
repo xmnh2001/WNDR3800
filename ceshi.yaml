@@ -103,7 +103,7 @@ dns:
 # 没有再使用锚点，是考虑很多新手修改难度，这样新手修改某个分组更容易些。
 proxy-groups:
   - {name: 🚀 手动选择, type: select, proxies: [♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
-  - {name: 🌍 全球, type: select, proxies: [🚀 手动选择, ♻️ 美国自动, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
+  - {name: 🌍 流媒体, type: select, proxies: [🚀 手动选择, ♻️ 美国自动, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
   - {name: 🤖 AI, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
   - {name: 🤖 Gemini, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
   - {name: 🎵 TikTok, type: select, proxies: [🚀 手动选择, ♻️ 香港自动, ♻️ 日本自动, ♻️ 狮城自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇯🇵 日本节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🌐 全部节点, 🎯 直连]}
@@ -137,18 +137,18 @@ rules:
   - RULE-SET,Gemini,🤖 Gemini
   - GEOSITE,bing,🤖 AI
   - RULE-SET,ai,🤖 AI
-  - GEOSITE,github,🌍 全球
-  - GEOSITE,youtube,🌍 全球
-  - GEOSITE,google,🌍 全球
-  - GEOSITE,onedrive,🌍 全球
-  - GEOSITE,microsoft,🌍 全球
+  - GEOSITE,github,🌍 流媒体
+  - GEOSITE,youtube,🌍 流媒体
+  - GEOSITE,google,🌍 流媒体
+  - GEOSITE,onedrive,🌍 流媒体
+  - GEOSITE,microsoft,🌍 流媒体
   - RULE-SET,apple_domain,🎯 直连
   - RULE-SET,tiktok_domain,🎵 TikTok
   - GEOIP,telegram,📲 Telegram,no-resolve
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,apple_ip,🎯 直连,no-resolve
-  - RULE-SET,google_ip,🌍 全球,no-resolve
+  - RULE-SET,google_ip,🌍 流媒体,no-resolve
   - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
   - RULE-SET,geolocation-!cn,🚀 手动选择
