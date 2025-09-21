@@ -131,6 +131,10 @@ proxy-groups:
 
 # 规则匹配
 rules:
+    # 若需禁用 QUIC 请取消注释 QUIC 两条规则
+    # 防止 YouTube 等使用 QUIC 导致速度不佳, 禁用 443 端口 UDP 流量（不包括国内）
+#  - AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOSITE,cn))),REJECT
+#  - AND,(AND,(DST-PORT,443),(NETWORK,UDP)),(NOT,((GEOIP,CN))),REJECT
   - DOMAIN-SUFFIX,m-team.cc,DIRECT
   - DOMAIN-SUFFIX,pttime.org,DIRECT
   - DOMAIN-SUFFIX,hdtime.org,DIRECT
