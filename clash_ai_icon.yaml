@@ -8,7 +8,7 @@ smart_s: &smart_s {type: smart, uselightgbm: false, collectdata: true, include-a
 
 proxy-providers:
   Airport1:
-    url: "https://sub.hongfeng.dpdns.org/hong56283"
+    url: ""
     type: http
     interval: 86400
     health-check:
