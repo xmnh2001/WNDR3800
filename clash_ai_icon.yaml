@@ -36,7 +36,7 @@ tcp-concurrent: true
 # interface-name: enp6s18
 log-level: warning
 find-process-mode: 'off'
-全部节点-client-fingerprint: chrome
+global-client-fingerprint: chrome
 keep-alive-idle: 600
 keep-alive-interval: 15
 profile:
