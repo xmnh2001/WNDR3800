@@ -3,7 +3,7 @@
 pr: &pr {type: select, proxies: [手动选择, 香港智能, 日本智能, 韩国智能, 狮城智能, 美国智能, 自动选择, 香港节点, 日本节点,韩国节点, 狮城节点, 美国节点, 全部节点, 直连]}
 # smart策略组相关
 smart_u: &smart_u {type: smart, uselightgbm: true, collectdata: false, include-all: true, interval: 300}
-smart_s: &smart_s {type: smart, uselightgbm: false, collectdata: true, include-all: true, interval: 300}
+smart_s: &smart_s {type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300}
 ######### 锚点 end #######
 
 # 机场订阅
