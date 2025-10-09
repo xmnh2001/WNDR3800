@@ -1,15 +1,15 @@
 ######### 锚点 start #######
 # 策略组相关
-pr: &pr {type: select, proxies: [手动选择, 香港智能, 日本智能, 韩国智能, 狮城智能, 美国智能, 自动选择, 香港节点, 日本节点,韩国节点, 狮城节点, 美国节点, 全部节点, 直连]}
+pr: &pr {type: select, proxies: [手动选择, 香港智能, 台湾智能, 日本智能, 韩国智能, 狮城智能, 美国智能, 自动选择, 香港节点, 台湾节点, 日本节点,韩国节点, 狮城节点, 美国节点, 全部节点, 直连]}
 # smart策略组相关
-smart_u: &smart_u {type: smart, uselightgbm: true, collectdata: false, include-all: true, interval: 300}
-smart_s: &smart_s {type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300}
+smart_u: &smart_u {type: smart, uselightgbm: false, collectdata: true, include-all: true, interval: 300, strategy: sticky-sessions}
+smart_s: &smart_s {type: smart, uselightgbm: false, collectdata: false, include-all: true, interval: 300, strategy: sticky-sessions}
 ######### 锚点 end #######
 
 # 机场订阅
 proxy-providers:
   Airport1:
-    url: ""
+    url: "https://sub.hongfeng.dpdns.org/hong56283"
     type: http
     interval: 86400
     health-check:
@@ -18,6 +18,11 @@ proxy-providers:
       interval: 300
     proxy: 直连
     exclude-filter: '.*(0\.1x|建议).*'
+    #override:
+      #dialer-proxy: 🇭🇰 香港节点
+    #payload:
+      #- {"name":"香港落地1", "type":"ss","server":"23.175.201.164","port":80,"cipher":"2022-blake3-aes-128-gcm","password":"UETm2mAIRiCaVJuIe1t0cA==","udp":true}
+      #- { name: "香港落地2", type: "ss" }
     
 # 节点信息
 proxies:
@@ -45,11 +50,12 @@ profile:
   store-fake-ip: true
 
 # 跑裸核自行删除注释即可，使用nikki仅内核的ui路径改为/etc/nikki/run/ui
+# 跑裸核自行删除注释即可，使用nikki仅内核的ui路径改为/etc/nikki/run/ui
 #external-controller: 0.0.0.0:9090
 #secret: ""
 #external-ui: "/etc/mihomo/ui"
 #external-ui-name: zashboard
-#external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+#external-ui-url: "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
 # 嗅探
 sniffer:
@@ -66,6 +72,21 @@ sniffer:
     - "+.v2ex.com"
   skip-domain:
     - "+.baidu.com"
+    - '+.telegram.org'
+    - '+.line.me'
+    - '+.whatsapp.net'
+    - '+.discord.gg'
+    - '+.discord.com'
+    - '+.cloudflare.com'
+    - '+.cloudflare-dns.com'
+    - '+.googleapis.com'
+    - '+.gstatic.com'
+  skip-ip-cidr:
+    # Cloudflare IPv4
+    - 104.16.0.0/12
+    - 172.64.0.0/13
+    - 162.158.0.0/15
+    - 198.41.128.0/17
 
 # 入站  
 tun:
@@ -91,6 +112,7 @@ dns:
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
+    - "*.lan"
     - "rule-set:private_domain,cn_domain"
     - "+.msftconnecttest.com"
     - "+.msftncsi.com"
@@ -103,7 +125,7 @@ dns:
     - https://dns.alidns.com/dns-query
  
 proxy-groups:
-  - {name: 手动选择, type: select, proxies: [香港智能, 日本智能, 韩国智能, 狮城智能, 美国智能, 自动选择, 香港节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 全部节点, 直连], icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/AdblockPlus_2.png"}
+  - {name: 手动选择, type: select, proxies: [香港智能, 台湾智能, 日本智能, 韩国智能, 狮城智能, 美国智能, 自动选择, 香港节点, 台湾节点, 日本节点, 韩国节点, 狮城节点, 美国节点, 全部节点, 直连], icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/AdblockPlus_2.png"}
   - {name: ChatGPT, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/ChatGPT.png"}
   - {name: Gemini, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/AI.png"}
   - {name: Github, <<: *pr, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/GitHub.png"}
@@ -117,15 +139,17 @@ proxy-groups:
   - {name: 非标端口, type: select, proxies: [遵循规则, 直连], icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Omission.png"}
   - {name: 漏网之鱼, type: select, proxies: [自动选择, 手动选择, 直连], icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Fish.png"}
   - {name: 香港节点, type: select, include-all: true, filter: "(?i)港|hk|hongkong|hong kong", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Hong_Kong.png"}
+  - {name: 台湾节点, type: select, include-all: true, filter: "(?i)台|🇼🇸|🇹🇼|TW|tai|TPE|TSA|KHH",icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/China_Taipei.png"}
   - {name: 日本节点, type: select, include-all: true, filter: "(?i)日|jp|japan", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Japan.png"}
   - {name: 韩国节点, type: select, include-all: true, filter: "(?i)韩|KR|KOR|韩国|首尔|Korea", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/South_Korea.png"}
   - {name: 狮城节点, type: select, include-all: true, filter: "(?i)新加坡|坡|狮城|SG|Singapore", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Singapore.png"}
   - {name: 美国节点, type: select, include-all: true, filter: "(?i)美|us|unitedstates|united states", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/USA.png"}
   - {name: 香港智能, <<: *smart_s, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Hong_Kong.png"}
+  - {name: 台湾智能, <<: *smart_s, filter: "(?=.*(台|🇼🇸|🇹🇼|TW|tai|TPE|TSA|KHH))^((?!(港|日|韩|新|深|美)).)*$", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/China_Taipei.png"}
   - {name: 日本智能, <<: *smart_s, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" , icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Japan.png"}
   - {name: 韩国智能, <<: *smart_s, filter: "(?=.*(韩|KR|KOR|Korea|韩国|首尔))^((?!(港|台|日|新|美)).)*$", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/South_Korea.png"}
   - {name: 狮城智能, <<: *smart_s, filter: "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|韩|日|美)).)*$", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Singapore.png"}
-  - {name: 美国智能, <<: *smart_s, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/USA.png"}
+  - {name: 美国智能, <<: *smart_u, filter: "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/USA.png"}
   - {name: 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连)).)*$", icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Auto_Link.png"}
   - {name: 全部节点, type: select, include-all: true, icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Network_2.png"}
   - {name: 遵循规则, type: select, proxies: [漏网之鱼], icon: "https://raw.githubusercontent.com/Vbaethon/HOMOMIX/refs/heads/main/Icon/Color/Large/Vimeo.png"}
