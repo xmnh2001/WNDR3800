@@ -178,7 +178,6 @@ rules:
   - DOMAIN-SUFFIX,m-team.cc,DIRECT
   - DOMAIN-SUFFIX,pttime.org,DIRECT
   - DOMAIN-SUFFIX,hdtime.org,DIRECT
-  - SRC-PORT,48853,DIRECT
   - DOMAIN-KEYWORD,synology,美国智能
   - RULE-SET,private_ip,直连,no-resolve
   - RULE-SET,private_domain,直连
